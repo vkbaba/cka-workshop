@@ -1,0 +1,14 @@
+apiVersion: training.eduk8s.io/v1alpha1
+kind: TrainingPortal
+metadata:
+  name: cka-workshop
+spec:
+  portal:
+    registration:
+      type: anonymous
+  workshops:
+  - name: cka-workshop
+    capacity: 5
+    reserved: 0
+    expires: 1h
+    orphaned: 10m

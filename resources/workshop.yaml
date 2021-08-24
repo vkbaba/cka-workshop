@@ -1,0 +1,33 @@
+apiVersion: training.eduk8s.io/v1alpha2
+kind: Workshop
+metadata:
+  name: cka-workshop
+spec:
+  title: CKA Workshop
+  description: CKA Workshop
+  vendor: eduk8s.io
+  difficulty: intermediate
+  duration: 1h
+  url: https://github.com/vkbaba/cka-workshop
+  content:
+    files: github.com/vkbaba/cka-workshop
+  session:
+    namespaces:
+      budget: large
+    applications:
+      terminal:
+        enabled: true
+      console:
+        enabled: false
+      editor:
+        enabled: false
+
+# vCluster requires more than large budget
+# | Budget    | CPU   | Memory |
+# |-----------|-------|--------|
+# | small     | 1000m | 1Gi    |
+# | medium    | 2000m | 2Gi    |
+# | large     | 4000m | 4Gi    |
+# | x-large   | 8000m | 8Gi    |
+# | xx-large  | 8000m | 12Gi   |
+# | xxx-large | 8000m | 16Gi   |

@@ -1,0 +1,9 @@
+name: Markdown Sample
+
+modules:
+    activate:
+    - workshop-overview
+    - setup-environment
+    - exercises/q0-setup
+    - exercises/a0-setup
+    - workshop-summary
