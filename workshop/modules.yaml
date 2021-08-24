@@ -7,7 +7,7 @@ modules:
         exit_sign: Start Workshop
     exercises/q0-setup:
         name: 事前準備
-    exercises/a1-setup:
+    exercises/a0-setup:
         name: 事前準備 回答
     workshop-summary:
         name: まとめ
