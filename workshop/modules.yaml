@@ -15,7 +15,7 @@ modules:
         name: コンテキストと名前空間 回答
     exercises/q2-scheduling:
         name: Pod のスケジューリング
-    exercises/q2-scheduling:
+    exercises/a2-scheduling:
         name: Pod のスケジューリング 回答
     workshop-summary:
         name: まとめ
