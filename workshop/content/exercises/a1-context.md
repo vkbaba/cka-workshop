@@ -3,9 +3,10 @@
 kubectl config current-context
 ```
 
-名前空間はマニフェストで作成してもよいですが、ここでは簡単にkubectl create コマンドでラベルごと作成してしまいましょう。
+名前空間はマニフェストで作成してもよいですが、ここでは簡単にkubectl create コマンドで名前空間を直接作成したあと、ラベルを割り当てましょう。
 ```execute
-kubectl create ns question1 --label=cka=q1
+kubectl create ns question1 
+kubectl label ns question1 cka=q1
 ```
 
 📝ヒント：  
