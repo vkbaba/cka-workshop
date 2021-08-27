@@ -1,7 +1,7 @@
 modules:
     workshop-overview:
         name: ハンズオンの概要
-        exit_sign: 始める前に
+        exit_sign: Next
     setup-environment:
         name: 始める前に
         exit_sign: Start Workshop
@@ -9,6 +9,14 @@ modules:
         name: 事前準備
     exercises/a0-setup:
         name: 事前準備 回答
+    exercises/q1-context:
+        name: コンテキストと名前空間
+    exercises/a1-context:
+        name: コンテキストと名前空間 回答
+    exercises/q2-scheduling:
+        name: Pod のスケジューリング
+    exercises/q2-scheduling:
+        name: Pod のスケジューリング 回答
     workshop-summary:
         name: まとめ
         exit_sign: Finish Workshop

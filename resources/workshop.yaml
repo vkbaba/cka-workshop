@@ -13,7 +13,7 @@ spec:
     files: github.com/vkbaba/cka-workshop
   session:
     namespaces:
-      budget: large
+      budget: medium
     applications:
       terminal:
         enabled: true

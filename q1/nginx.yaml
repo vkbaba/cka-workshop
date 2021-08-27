@@ -6,3 +6,8 @@ spec:
   containers:
   - name: nginx
     image: quay.io/bitnami/nginx
+    resources:
+      limits:
+        memory: 256Mi
+      requests:
+        memory: 256Mi

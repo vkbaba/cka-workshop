@@ -1,0 +1,6 @@
+rbac:
+  clusterRole:
+    create: true
+
+syncer:
+  extraArgs: ["--fake-nodes=false", "--sync-all-nodes"]

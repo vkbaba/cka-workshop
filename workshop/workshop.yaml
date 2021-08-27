@@ -6,4 +6,8 @@ modules:
     - setup-environment
     - exercises/q0-setup
     - exercises/a0-setup
+    - exercises/q1-context
+    - exercises/a1-context
+    - exercises/q2-scheduling
+    - exercises/a2-scheduling
     - workshop-summary

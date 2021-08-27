@@ -4,11 +4,14 @@ metadata:
   name: cka-workshop
 spec:
   portal:
+    password: VMware1!
     registration:
-      type: anonymous
+      type: one-step
+    updates:
+      workshop: true
   workshops:
   - name: cka-workshop
-    capacity: 5
-    reserved: 0
+    capacity: 1
+    reserved: 1
     expires: 1h
     orphaned: 10m
