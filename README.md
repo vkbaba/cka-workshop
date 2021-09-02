@@ -1,27 +1,18 @@
-LAB - Markdown Sample
+CKA Workshop
 =====================
 
-Sample workshop content using Markdown formatting for pages.
+Japan CKA Workshop contents using educates and vcluster.
 
-For more detailed information on how to create and deploy workshops, consult
-the documentation for Educates at:
+### Requirements:  
+- Install educates  
+TBD
+- Install vcluster  
+https://github.com/loft-sh/vcluster
 
-* https://docs.edukates.io
+### Why vcluter?
+Each educates workshop session is limited to a namespace, so ONLY namespaced resources can be deployed. To get rid of this limitation and let participants use the cluster freely and efficiently, vcluster is a good way.
 
-If you already have the Educates operator installed and configured, to
-deploy and view this sample workshop, run:
+### Quick Start
+TBD
 
-```
-kubectl apply -f https://raw.githubusercontent.com/eduk8s/lab-markdown-sample/master/resources/workshop.yaml
-kubectl apply -f https://raw.githubusercontent.com/eduk8s/lab-markdown-sample/master/resources/training-portal.yaml
-```
 
-This will deploy a training portal hosting just this workshop. To get the
-URL for accessing the training portal run:
-
-```
-kubectl get trainingportal/lab-markdown-sample
-```
-
-The training portal is configured to allow anonymous access. For your own
-workshop content you should consider removing anonymous access.

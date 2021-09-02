@@ -1,7 +1,6 @@
 modules:
     workshop-overview:
         name: ハンズオンの概要
-        exit_sign: Next
     setup-environment:
         name: 始める前に
         exit_sign: Start Workshop
@@ -17,28 +16,19 @@ modules:
         name: Pod のスケジューリング
     exercises/a2-scheduling:
         name: Pod のスケジューリング 回答
+    exercises/q3-probe:
+        name: Probe の理解
+    exercises/a3-probe:
+        name: Probe の理解
+    exercises/q4-rbac:
+        name: RBAC
+    exercises/a4-rbac:
+        name: RBAC
+    exercises/q5-networkpolicy:
+        name: ネットワークポリシー
+    exercises/a5-networkpolicy:
+        name: ネットワークポリシー
     workshop-summary:
         name: まとめ
         exit_sign: Finish Workshop
-    # exercises/q1:
-    #     name: コンテキストの変更
-    # exercises/a1:
-    #     name: コンテキストの変更
-    # exercises/q2:
-    #     name: Pod の作成とスケジューリング
-    # exercises/a2:
-    #     name: Pod の作成とスケジューリング
-    # exercises/q3:
-    #     name: Probe の理解
-    # exercises/a3:
-    #     name: Probe の理解
-    # exercises/q4:
-    #     name: ロールの設定
-    # exercises/a4:
-    #     name: ロールの設定
-    # exercises/q5:
-    #     name: ネットワークポリシー
-    # exercises/a5:
-    #     name: ネットワークポリシー
-    # exercises/appendix:
-    #     name: おまけ
+

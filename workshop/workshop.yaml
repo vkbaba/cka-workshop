@@ -10,4 +10,10 @@ modules:
     - exercises/a1-context
     - exercises/q2-scheduling
     - exercises/a2-scheduling
+    - exercises/q3-probe
+    - exercises/a3-probe
+    - exercises/q4-rbac
+    - exercises/a4-rbac
+    - exercises/q5-networkpolicy
+    - exercises/a5-networkpolicy
     - workshop-summary
