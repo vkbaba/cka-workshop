@@ -1,0 +1,90 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-mysql
+  labels:
+    app: wordpress
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: wordpress
+    tier: mysql
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-application-web
+  name: my-application-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-application-web
+  template:
+    metadata:
+      labels:
+        app: my-application-web
+    spec:
+      containers:
+      - image: nginx:latest
+        name: my-application-nginx
+        ports:
+        - containerPort: 8443
+          protocol: TCP
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - "[ -f /run/nginx.pid ] && ps -A | grep nginx"
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            scheme: HTTPS
+            path: /index.html
+            port: 8443
+          initialDelaySeconds: 10
+          periodSeconds: 5
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-application-web
+  name: my-application-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-application-web
+  template:
+    metadata:
+      labels:
+        app: my-application-web
+    spec:
+      containers:
+      - image: nginx:latest
+        name: my-application-nginx
+        ports:
+        - containerPort: 8443
+          protocol: TCP
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - "[ -f /run/nginx.pid ] && ps -A | grep nginx"
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            scheme: HTTPS
+            path: /index.html
+            port: 8443
+          initialDelaySeconds: 10
+          periodSeconds: 5
