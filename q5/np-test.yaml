@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-frontend
+  namespace: question5
+  labels:
+    app: frontend
+spec:
+  containers:
+  - name: busybox-frontend
+    image: harbor-repo.vmware.com/dockerhub-proxy-cache/library/busybox
+    command:
+      - sleep
+      - "3600"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-backend
+  namespace: question5
+  labels:
+    app: backend
+spec:
+  containers:
+  - name: busybox-backend
+    image: harbor-repo.vmware.com/dockerhub-proxy-cache/library/busybox
+    command:
+      - sleep
+      - "3600"
