@@ -4,8 +4,25 @@ metadata:
   name: nginx-rbac
   namespace: question4
 spec:
-  # serviceAccountName: q4-sa
+  serviceAccountName: q4-sa
   containers:
   - name: nginx-rbac
     image: harbor-repo.vmware.com/dockerhub-proxy-cache/library/nginx
-
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-configmap
+  namespace: question4
+data:
+  color: purple
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: test-secret
+  namespace: question4
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: MWYyZDFlMmU2N2Rm

@@ -61,30 +61,34 @@ kubectl apply -f ~/q4/rbac-test.yaml
 ```
 Configmap はGet できるはずです。
 ```execute
-kubectl exec -n question4 nginx-rbac -- curl -k https://kubernetes.default/api/v1/namespaces/question4/configmaps/test-configmap
+kubectl exec -it -n question4 nginx-rbac -- sh
+curl -k -H "Authorization: Bearer $(cat /run/secrets/kubernetes.io/serviceaccount/token)"  https://kubernetes.default/api/v1/namespaces/question4/configmaps/test-configmap 
+exit
 ```
 Secret もGet できるはずです。
 ```execute
-kubectl exec -n question4 nginx-rbac -- curl -k https://kubernetes.default/api/v1/namespaces/question4/secrets/test-secret
+kubectl exec -it -n question4 nginx-rbac -- sh
+curl -k -H "Authorization: Bearer $(cat /run/secrets/kubernetes.io/serviceaccount/token)"  https://kubernetes.default/api/v1/namespaces/question4/secrets/test-secret
+exit
 ```
 Pod はGet できません。
 ```execute
-kubectl exec -n question4 nginx-rbac -- curl -k https://kubernetes.default/api/v1/namespaces/question4/pods/test-pod
+kubectl exec -it -n question4 nginx-rbac -- sh
+curl -k -H "Authorization: Bearer $(cat /run/secrets/kubernetes.io/serviceaccount/token)"  https://kubernetes.default/api/v1/namespaces/question4/pods/nginx-rbac
+exit
 ```
 📝ヒント：  
 https://kubernetes.io/docs/ja/tasks/administer-cluster/access-cluster-api/  
 
 Pod を作成しなくても、実は `kubectl auth` でリソースにアクセスできるかどうかを確認することができます。  
 
-例えば下記の出力がyes の場合、そのリソースにアクセスできます。
+例えば下記の出力がyes の場合、そのリソースの操作(Configmap のGet)ができます。
 ```
-kubectl -n question4 auth can-i get configmap \
---as system:serviceaccount:question4:q4-sa
+kubectl -n question4 auth can-i get configmap --as system:serviceaccount:question4:q4-sa
 ```
-no と表示されればアクセスできません。
+no と表示されればリソースの操作(Configmap のCreate)ができません。
 ```
-kubectl -n question4 auth can-i create configmap \
---as system:serviceaccount:question4:q4-sa
+kubectl -n question4 auth can-i create configmap --as system:serviceaccount:question4:q4-sa
 ```
 
 
