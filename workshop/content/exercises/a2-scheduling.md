@@ -19,7 +19,7 @@ metadata:
 spec:
   containers:
   - name: c1
-    image: busybox:1.31.1
+    image: public.ecr.aws/runecast/busybox:1.33.1
     args:
       - /bin/sh
       - -c
@@ -28,7 +28,7 @@ spec:
     - name: vol
       mountPath: /vol
   - name: c2
-    image: busybox:1.31.1
+    image: public.ecr.aws/runecast/busybox:1.33.1
     args:
       - /bin/sh
       - -c
@@ -87,7 +87,7 @@ metadata:
 spec:
   containers:
   - name: c1
-    image: busybox:1.31.1
+    image: public.ecr.aws/runecast/busybox:1.33.1
     args:
       - /bin/sh
       - -c
@@ -96,7 +96,7 @@ spec:
     - name: vol
       mountPath: /vol
   - name: c2
-    image: busybox:1.31.1
+    image: public.ecr.aws/runecast/busybox:1.33.1
     args:
       - /bin/sh
       - -c
